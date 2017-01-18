@@ -1,0 +1,11 @@
+<div *ngIf="question">
+    
+    <img 
+        *ngFor="let country of question.proposals"
+        src="{{getImagesUrl()}}/{{country.flagPath}}"
+        class="flag"
+        (click)="verifySelection(country)" 
+         /> 
+        
+    <p>Where is the country {{question.answer.name}} ?</p>
+</div>
