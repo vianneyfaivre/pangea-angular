@@ -2,7 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule }             from '@angular/core';
 
 import { HomeComponent }   from './ui/home/home.component';
-import { PlayGameComponent }   from './ui/play-game/play-game.component';
+import { PlayFlagsCountryComponent }   from './ui/play-flags-country/play-flags-country.component';
 
 const routes: Routes = [
   {
@@ -15,8 +15,8 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'play',
-    component: PlayGameComponent
+    path: 'play-flags-country',
+    component: PlayFlagsCountryComponent
   }
 ];
 

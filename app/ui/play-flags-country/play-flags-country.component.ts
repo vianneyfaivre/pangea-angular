@@ -7,12 +7,12 @@ import { QuestionService } from '../../service'
 import { Environment } from '../../config/environment';
 
 @Component({
-  selector: 'play-game',
-  templateUrl: 'app/ui/play-game/play-game.component.html',
-  styleUrls: ['app/ui/play-game/play-game.component.css'],
+  selector: 'play-flags-country',
+  templateUrl: 'app/ui/play-flags-country/play-flags-country.component.html',
+  styleUrls: ['app/ui/play-flags-country/play-flags-country.component.css'],
 })
 
-export class PlayGameComponent implements OnInit {
+export class PlayFlagsCountryComponent implements OnInit {
   
   question: Question;
   proposalsNumber: number;
