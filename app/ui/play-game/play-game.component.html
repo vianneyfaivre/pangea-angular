@@ -9,3 +9,7 @@
         
     <p>Where is the country {{question.answer.name}} ?</p>
 </div>
+
+<div *ngIf="score">
+    Score: {{score.correct}} / {{score.asked()}}
+</div>

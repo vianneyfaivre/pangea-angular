@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
-import { Question, Country } from '../../model';
+import { Question, Country, Score } from '../../model';
 import { QuestionService } from '../../service'
 
 import { Environment } from '../../config/environment';
@@ -15,18 +15,30 @@ import { Environment } from '../../config/environment';
 export class PlayGameComponent implements OnInit {
   
   question: Question;
+  proposalsNumber: number;
+  score: Score;
 
   constructor(
     private questionService: QuestionService) { }
   
   ngOnInit() {
-    this.questionService.generate(4).then(x => {
-      this.question = x;
-    });
+    this.proposalsNumber = 4;
+    this.generateQuestion();
+    this.score = new Score();
+  }
+
+  generateQuestion() {   
+    this.questionService
+          .generate(this.proposalsNumber)
+          .then(q => this.question = q);
   }
 
   verifySelection(answer: Country) : void {
-    alert(this.question.tryAnswer(answer));
+    let correct: boolean = this.question.tryAnswer(answer);
+
+    this.score.update(correct);
+
+    this.generateQuestion();
   }
 
   getImagesUrl() : string {
