@@ -3,6 +3,7 @@ import { NgModule }             from '@angular/core';
 
 import { HomeComponent }   from './ui/home/home.component';
 import { PlayFlagsCountryComponent }   from './ui/play-flags-country/play-flags-country.component';
+import { PlayCountriesFlagComponent }   from './ui/play-countries-flag/play-countries-flag.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'play-flags-country',
     component: PlayFlagsCountryComponent
+  },
+  {
+    path: 'play-countries-flag',
+    component: PlayCountriesFlagComponent
   }
 ];
 

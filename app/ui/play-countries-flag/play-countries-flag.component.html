@@ -1,0 +1,17 @@
+<div *ngIf="question">
+          
+    <p  
+        *ngFor="let country of question.proposals"
+        class="country"
+        (click)="verifySelection(country)"
+    >
+        {{country.name}}
+    </p>
+
+    <p>Which country has this flag:</p>
+    <img class="flag" src="{{getImagesUrl()}}/{{question.answer.flagPath}}" />
+</div>
+
+<div *ngIf="score">
+    Score: {{score.correct}} / {{score.asked()}}
+</div>

@@ -6,7 +6,7 @@ import { HttpModule }     from '@angular/http';
 import { HomeComponent }   from './ui/home/home.component';
 import { PangeaComponent }   from './ui/pangea.component';
 import { PlayFlagsCountryComponent }   from './ui/play-flags-country/play-flags-country.component';
-
+import { PlayCountriesFlagComponent }   from './ui/play-countries-flag/play-countries-flag.component';
 
 import { AppRoutingModule }        from './app.routing';
 
@@ -22,7 +22,8 @@ import { QuestionService }  from './service';
   declarations: [
     PangeaComponent,
     HomeComponent,
-    PlayFlagsCountryComponent
+    PlayFlagsCountryComponent,
+    PlayCountriesFlagComponent
   ],
   providers: [
     QuestionService
