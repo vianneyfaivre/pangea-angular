@@ -1,0 +1,16 @@
+<div *ngIf="question">
+          
+    <p  
+        *ngFor="let country of question.proposals"
+        class="country"
+        (click)="verifySelection(country)"
+    >
+        {{country.name}}
+    </p>
+
+    <p>Capital city: <span>{{question.answer.capitalCity}}</span></p>
+</div>
+
+<div *ngIf="score">
+    Score: {{score.correct}} / {{score.asked()}}
+</div>

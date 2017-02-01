@@ -10,6 +10,7 @@ export class Question {
 export class Country {
     name: string;
     flagPath: string;
+    capitalCity: string;
 
     public equals(country: Country) : boolean {
         return this.name === country.name;
