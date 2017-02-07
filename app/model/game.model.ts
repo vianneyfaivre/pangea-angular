@@ -8,7 +8,7 @@ export class Score {
       this.wrong = 0;  
     } 
 
-    asked() : number {
+    total() : number {
       return this.correct + this.wrong;
     }
 
@@ -20,4 +20,10 @@ export class Score {
         this.wrong++; 
       }
     }
+}
+
+export enum QuizModeEnum {
+  LABEL_OVER_LABELS,
+  IMAGE_OVER_LABELS,
+  LABEL_OVER_IMAGES
 }

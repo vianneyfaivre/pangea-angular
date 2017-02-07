@@ -2,9 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule }             from '@angular/core';
 
 import { HomeComponent }   from './ui/home/home.component';
-import { PlayFlagsCountryComponent }   from './ui/play-flags-country/play-flags-country.component';
-import { PlayCountriesFlagComponent }   from './ui/play-countries-flag/play-countries-flag.component';
-import { PlayCapitalCountryComponent } from './ui/play-capital-country/play-capital-country.component';
+import { PlayOneOverNComponent }   from './ui/play-one-over-n/play-one-over-n.component';
 
 const routes: Routes = [
   {
@@ -18,15 +16,15 @@ const routes: Routes = [
   },
   {
     path: 'play-flags-country',
-    component: PlayFlagsCountryComponent
+    component: PlayOneOverNComponent
   },
   {
     path: 'play-countries-flag',
-    component: PlayCountriesFlagComponent
+    component: PlayOneOverNComponent
   },
   {
     path: 'play-capital-country',
-    component: PlayCapitalCountryComponent
+    component: PlayOneOverNComponent
   }
 ];
 

@@ -1,22 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
-import { Question, Country, Score } from '../../model';
+import { Question, Country, Score, QuizModeEnum } from '../../model';
 import { QuestionService } from '../../service'
 
 import { Environment } from '../../config/environment';
 
 @Component({
-  selector: 'play-countries-flag',
-  templateUrl: 'app/ui/play-countries-flag/play-countries-flag.component.html',
-  styleUrls: ['app/ui/play-countries-flag/play-countries-flag.component.css'],
+  selector: 'play-one-over-n',
+  templateUrl: 'app/ui/play-one-over-n/play-one-over-n.component.html',
+  styleUrls: ['app/ui/play-one-over-n/play-one-over-n.component.css'],
 })
 
-export class PlayCountriesFlagComponent implements OnInit {
+export class PlayOneOverNComponent implements OnInit {
   
   question: Question;
   proposalsNumber: number;
   score: Score;
+  mode: QuizModeEnum;
+
+  QuizModeEnum = QuizModeEnum; // let QuizModeEnum be available in template
 
   constructor(
     private questionService: QuestionService) { }
@@ -25,6 +28,7 @@ export class PlayCountriesFlagComponent implements OnInit {
     this.proposalsNumber = 4;
     this.generateQuestion();
     this.score = new Score();
+    this.mode = QuizModeEnum.LABEL_OVER_IMAGES;
   }
 
   generateQuestion() {   

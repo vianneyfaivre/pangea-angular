@@ -21,7 +21,7 @@ export class QuestionService {
         .then((response) => {
             let tmp:Question = plainToClass<Question, string>(Question, response.json());
 
-            tmp.proposals = plainToClass(Country, tmp.proposals);
+            tmp.proposals = plainToClass<Country, Country[]>(Country, tmp.proposals);
             tmp.answer = plainToClass<Country, Object>(Country, tmp.answer);
 
             return tmp;

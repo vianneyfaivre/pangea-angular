@@ -5,10 +5,7 @@ import { HttpModule }     from '@angular/http';
 
 import { HomeComponent }   from './ui/home/home.component';
 import { PangeaComponent }   from './ui/pangea.component';
-import { PlayFlagsCountryComponent }   from './ui/play-flags-country/play-flags-country.component';
-import { PlayCountriesFlagComponent }   from './ui/play-countries-flag/play-countries-flag.component';
-import { PlayCapitalCountryComponent } from './ui/play-capital-country/play-capital-country.component';
-
+import { PlayOneOverNComponent }   from './ui/play-one-over-n/play-one-over-n.component';
 import { AppRoutingModule }        from './app.routing';
 
 import { QuestionService }  from './service';
@@ -23,9 +20,7 @@ import { QuestionService }  from './service';
   declarations: [
     PangeaComponent,
     HomeComponent,
-    PlayFlagsCountryComponent,
-    PlayCountriesFlagComponent,
-    PlayCapitalCountryComponent
+    PlayOneOverNComponent
   ],
   providers: [
     QuestionService

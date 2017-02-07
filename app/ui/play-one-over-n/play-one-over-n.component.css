@@ -3,3 +3,7 @@ img.flag {
     margin-right: 15px;
     cursor: pointer;
 }
+
+.clickable {
+    cursor: pointer;
+}
