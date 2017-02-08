@@ -1,6 +1,6 @@
 
 <ul>
-    <li> <a routerLink="/play-flags-country">Play: flags-country!</a></li>
-    <li> <a routerLink="/play-countries-flag">Play: countries-flag!</a></li>
-    <li> <a routerLink="/play-capital-country">Play: capital-country!</a></li>
+    <li> <a [routerLink]="['/play', { mode: QuizModeEnum.LABEL_OVER_IMAGES }]">Play: flags-country!</a></li>
+    <li> <a [routerLink]="['/play', { mode: QuizModeEnum.IMAGE_OVER_LABELS }]">Play: countries-flag!</a></li>
+    <li> <a [routerLink]="['/play', { mode: QuizModeEnum.LABEL_OVER_LABELS }]">Play: capital-country!</a></li>
 </ul>

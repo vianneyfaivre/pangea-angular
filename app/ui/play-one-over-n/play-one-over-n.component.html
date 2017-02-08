@@ -5,6 +5,7 @@
         <span  
             *ngFor="let proposal of question.proposals"
             (click)="verifySelection(proposal)"
+            class="clickable"
         >
             {{proposal.showProposal(mode)}}
         </span>
@@ -18,6 +19,7 @@
         <span  
             *ngFor="let proposal of question.proposals"
             (click)="verifySelection(proposal)"
+            class="clickable"
         >
             {{proposal.showProposal(mode)}}
         </span>
@@ -31,9 +33,9 @@
     <div *ngIf="mode === QuizModeEnum.LABEL_OVER_IMAGES">
         <img 
             *ngFor="let proposal of question.proposals"
-            class="flag"
+            class="clickable flag"
             src="{{getImagesUrl()}}/{{proposal.showProposal(mode)}}"
-            (click)="verifySelection(proposal)" 
+            (click)="verifySelection(proposal)"
         /> 
         
         <p>{{question.answer.showQuestion(mode)}}</p>

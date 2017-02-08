@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
 import { Question, Country, Score, QuizModeEnum } from '../../model';
@@ -22,13 +23,18 @@ export class PlayOneOverNComponent implements OnInit {
   QuizModeEnum = QuizModeEnum; // let QuizModeEnum be available in template
 
   constructor(
+    private route: ActivatedRoute,
     private questionService: QuestionService) { }
   
   ngOnInit() {
     this.proposalsNumber = 4;
     this.generateQuestion();
     this.score = new Score();
-    this.mode = QuizModeEnum.LABEL_OVER_IMAGES;
+    this.mode = +this.route.snapshot.params['mode'];
+ 
+    if(QuizModeEnum[this.mode] === undefined) {
+      throw new Error("Mode with id "+this.mode+" not found"); 
+    }
   }
 
   generateQuestion() {   

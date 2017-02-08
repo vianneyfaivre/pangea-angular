@@ -26,7 +26,7 @@ export class Country {
         } else if(mode === QuizModeEnum.IMAGE_OVER_LABELS) {
             return this.flagPath;
         }
-        throw "Quiz mode not found : "+mode;
+        throw new Error("Quiz mode not found : "+mode);
     }
 
     showProposal(mode: QuizModeEnum) : string {
@@ -37,6 +37,6 @@ export class Country {
         } else if(mode === QuizModeEnum.IMAGE_OVER_LABELS) {
             return this.name;
         }
-        throw "Quiz mode not found : "+mode;
+        throw new Error("Quiz mode not found : "+mode);
     }
 }

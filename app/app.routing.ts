@@ -15,15 +15,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'play-flags-country',
-    component: PlayOneOverNComponent
-  },
-  {
-    path: 'play-countries-flag',
-    component: PlayOneOverNComponent
-  },
-  {
-    path: 'play-capital-country',
+    path: 'play',
     component: PlayOneOverNComponent
   }
 ];
