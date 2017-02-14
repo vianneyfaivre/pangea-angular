@@ -5,40 +5,48 @@
         <span  
             *ngFor="let proposal of question.proposals"
             (click)="verifySelection(proposal)"
-            class="clickable"
+            class="clickable btn btn-lg btn-default"
         >
             {{proposal.showProposal(mode)}}
         </span>
 
-        <p>{{question.answer.showQuestion(mode)}}</p>
+        <p>Click on: 
+            <span class="label label-primary">{{question.answer.showQuestion(mode)}}</span>
+        </p>
     </div>    
 
     <!-- One image over * labels (ex: find country (displayed as a flag) over 4 country names) -->
     <div *ngIf="mode === QuizModeEnum.IMAGE_OVER_LABELS">
           
-        <span  
-            *ngFor="let proposal of question.proposals"
-            (click)="verifySelection(proposal)"
-            class="clickable"
-        >
-            {{proposal.showProposal(mode)}}
-        </span>
+        <p>
+            <span  
+                *ngFor="let proposal of question.proposals"
+                (click)="verifySelection(proposal)"
+                class="clickable btn btn-lg btn-default"
+            >
+                {{proposal.showProposal(mode)}}
+            </span>
+        </p>
 
-        <img 
-            class="flag" 
-            src="{{getImagesUrl()}}/{{question.answer.showQuestion(mode)}}" />
+        <p>Click on:
+            <img 
+                class="flag img-thumbnail" 
+                src="{{getImagesUrl()}}/{{question.answer.showQuestion(mode)}}" />
+        </p>
     </div>
 
     <!-- One label over * images (ex: find country (displayed as a label) over 4 country flags) -->
     <div *ngIf="mode === QuizModeEnum.LABEL_OVER_IMAGES">
         <img 
             *ngFor="let proposal of question.proposals"
-            class="clickable flag"
+            class="clickable flag img-thumbnail"
             src="{{getImagesUrl()}}/{{proposal.showProposal(mode)}}"
             (click)="verifySelection(proposal)"
         /> 
         
-        <p>{{question.answer.showQuestion(mode)}}</p>
+        <p>Click on: 
+            <span class="label label-primary">{{question.answer.showQuestion(mode)}}</span>
+        </p>
     </div>
 </div>
 

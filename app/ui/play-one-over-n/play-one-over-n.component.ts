@@ -33,7 +33,7 @@ export class PlayOneOverNComponent implements OnInit {
     this.mode = +this.route.snapshot.params['mode'];
  
     if(QuizModeEnum[this.mode] === undefined) {
-      throw new Error("Mode with id "+this.mode+" not found"); 
+      throw new Error(`Mode with id ${this.mode} not found`); 
     }
   }
 
